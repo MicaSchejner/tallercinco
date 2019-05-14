@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".Main3Activity"
+    tools:showIn="@layout/activity_main3">
+
 
     <ImageButton
         android:id="@+id/imageButton17"
@@ -69,13 +70,13 @@
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
-        android:text="Jordania"
+        android:text="recomendados"
         android:textAlignment="center"
         android:textColor="#0F254E"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -86,24 +87,24 @@
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
-        android:text="China"
+        android:text="Donde Comer"
         android:textAlignment="center"
         android:textColor="#0F254E"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.687" />
 
     <TextView
         android:id="@+id/tx_dondeir5"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
-        android:text=" Agra"
+        android:text=" ocio"
         android:textAlignment="center"
         android:textColor="#0F254E"
         android:textSize="14sp"
@@ -120,24 +121,24 @@
         android:layout_width="170dp"
         android:layout_height="22dp"
         android:fontFamily="casual"
-        android:text="Rio de Janeiro"
+        android:text="Actividades"
         android:textAlignment="center"
         android:textColor="#0F254E"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.361" />
+        app:layout_constraintVertical_bias="0.372" />
 
     <TextView
         android:id="@+id/tx_dondeir3"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
-        android:text="Roma"
+        android:text="Transporte"
         android:textAlignment="center"
         android:textColor="#0F254E"
         android:textSize="14sp"
@@ -147,67 +148,73 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.687" />
 
     <TextView
         android:id="@+id/tx_dondeir2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-thin"
-        android:text="¿A Donde Viajar?"
+        android:text="( LUGAR )"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <ImageButton
         android:id="@+id/imageButton11"
         android:layout_width="169dp"
-        android:layout_height="160dp"
+        android:layout_height="130dp"
+        android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862"
-        app:srcCompat="@drawable/e" />
+        app:srcCompat="@drawable/recomendado" />
 
     <ImageButton
         android:id="@+id/imageButton10"
         android:layout_width="169dp"
         android:layout_height="160dp"
+        android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/c" />
+        app:layout_constraintVertical_bias="0.537"
+        app:srcCompat="@drawable/comida" />
 
     <ImageButton
         android:id="@+id/rio"
         android:layout_width="169dp"
         android:layout_height="160dp"
+        android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13"
-        app:srcCompat="@drawable/a" />
+        app:layout_constraintVertical_bias="0.133"
+        app:srcCompat="@drawable/actividades" />
 
     <ImageButton
         android:id="@+id/cuzco2"
         android:layout_width="169dp"
         android:layout_height="160dp"
+        android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -216,50 +223,39 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13"
-        app:srcCompat="@drawable/b" />
+        app:srcCompat="@drawable/hoteles" />
 
-    <ImageButton
-        android:id="@+id/cuzco25"
-        android:layout_width="169dp"
-        android:layout_height="160dp"
-        android:scaleType="fitXY"
-        android:tooltipText="Send an email"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13"
-        app:srcCompat="@drawable/b" />
     <ImageButton
         android:id="@+id/roma"
         android:layout_width="169dp"
         android:layout_height="160dp"
+        android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/d" />
+        app:layout_constraintVertical_bias="0.537"
+        app:srcCompat="@drawable/transporte" />
 
     <TextView
         android:id="@+id/tx_dondeir"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
-        android:text="Cuzco"
+        android:text="Donde dormir"
         android:textAlignment="center"
         android:textColor="#0F254E"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <Button
         android:id="@+id/button"
@@ -267,7 +263,7 @@
         android:layout_height="46dp"
         android:layout_marginBottom="4dp"
         android:cursorVisible="false"
-        android:text="@string/buttonir"
+        android:text="@string/buttoncompartir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -276,7 +272,8 @@
     <ImageButton
         android:id="@+id/agra"
         android:layout_width="169dp"
-        android:layout_height="160dp"
+        android:layout_height="130dp"
+        android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -285,6 +282,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862"
-        app:srcCompat="@drawable/f" />
+        app:srcCompat="@drawable/ocio" />
 
 </android.support.constraint.ConstraintLayout>

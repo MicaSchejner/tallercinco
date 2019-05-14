@@ -3,8 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.lonely_planet_tp.MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:orderInCategory="101"
+        android:title="Home" />
+    <item
+        android:orderInCategory="102"
+        android:title="@string/actividades" />
+    <item
+        android:orderInCategory="103"
+        android:title="Donde Dormir" />
+    <item
+        android:orderInCategory="104"
+        android:title="Donde Comer" />
+    <item
+        android:orderInCategory="105"
+        android:title="Transporte" />
+    <item
+        android:orderInCategory="106"
+        android:title="Recomendados" />
+    <item
+        android:orderInCategory="107"
+        android:title="Ocio" />
+    <item
+        android:orderInCategory="108"
+        android:title="Suscribirte" />
 </menu>
