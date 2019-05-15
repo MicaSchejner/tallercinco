@@ -16,12 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity_actividad"
-            android:label="@string/title_activity_main_actividad"
+            android:name=".MainActivity_menu_informacion"
+            android:label="@string/title_activity_main_menu_informacion"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".MainActivity_menu_info"
-            android:label="@string/title_activity_main3"
+            android:name=".MainActivity_actividad"
+            android:label="@string/title_main_actividad"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Main2Activity"
