@@ -18,7 +18,7 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ImageButton botonrio = findViewById(R.id.rio);
+        ImageButton botonrio = findViewById(R.id.ib1);
 
         botonrio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,7 +30,7 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
         });
 
 
-        Button bboton = (Button)findViewById(R.id.button);
+        Button bboton = (Button)findViewById(R.id.bSuscribirte);
         bboton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

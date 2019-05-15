@@ -17,7 +17,7 @@ public class MainActivity_menu_informacion extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ImageButton botonrio = findViewById(R.id.imageButton4);
+        ImageButton botonrio = findViewById(R.id.ibActividades);
 
         botonrio.setOnClickListener(new View.OnClickListener() {
             @Override

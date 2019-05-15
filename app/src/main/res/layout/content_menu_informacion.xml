@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_menu_informacion">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/ibOcio"
         android:layout_width="169dp"
         android:layout_height="130dp"
         android:background="#00FFFFFF"
@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/ocio" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/ibTransporte"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:background="#00FFFFFF"
@@ -39,7 +39,7 @@
         app:srcCompat="@drawable/transporte" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/ibDormir"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:background="#00FFFFFF"
@@ -54,7 +54,7 @@
         app:srcCompat="@drawable/hoteles" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/ibActividades"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:background="#00FFFFFF"
@@ -69,6 +69,7 @@
         app:srcCompat="@drawable/actividades" />
 
     <ImageButton
+        android:id="@+id/ibComer"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:background="#00FFFFFF"
@@ -80,10 +81,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.537"
-        app:srcCompat="@drawable/comida"/>
+        app:srcCompat="@drawable/comida" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/ibRecomendados"
         android:layout_width="169dp"
         android:layout_height="130dp"
         android:background="#00FFFFFF"
@@ -98,7 +99,7 @@
         app:srcCompat="@drawable/recomendado" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/ibInstagram"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
@@ -112,7 +113,7 @@
         app:srcCompat="@drawable/instagram" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/ibFacebook"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
@@ -126,7 +127,7 @@
         app:srcCompat="@drawable/facebook" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/ibTwitter"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
@@ -140,7 +141,7 @@
         app:srcCompat="@drawable/twitter" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/ibPinterest"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
@@ -154,7 +155,7 @@
         app:srcCompat="@drawable/pinterest"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvRecomendados"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
@@ -171,7 +172,7 @@
         app:layout_constraintVertical_bias="0.923" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvComer"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
@@ -188,7 +189,7 @@
         app:layout_constraintVertical_bias="0.687" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvOcio"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
@@ -205,7 +206,7 @@
         app:layout_constraintVertical_bias="0.92" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvActividad"
         android:layout_width="170dp"
         android:layout_height="22dp"
         android:fontFamily="casual"
@@ -222,7 +223,7 @@
         app:layout_constraintVertical_bias="0.372"/>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvTransporte"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
@@ -239,7 +240,7 @@
         app:layout_constraintVertical_bias="0.687"  />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tvLugar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-thin"
@@ -254,7 +255,7 @@
         app:layout_constraintVertical_bias="0.024" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tvDormir"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"

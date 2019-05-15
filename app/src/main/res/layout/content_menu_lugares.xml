@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_menu_lugares">
 
     <ImageButton
-        android:id="@+id/imageButton17"
+        android:id="@+id/ibPinterest"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
@@ -23,7 +23,7 @@
         app:srcCompat="@drawable/pinterest" />
 
     <ImageButton
-        android:id="@+id/imageButton16"
+        android:id="@+id/ibTwitter"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
@@ -37,7 +37,7 @@
         app:srcCompat="@drawable/twitter" />
 
     <ImageButton
-        android:id="@+id/imageButton15"
+        android:id="@+id/tvFacebook"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
@@ -51,7 +51,7 @@
         app:srcCompat="@drawable/facebook" />
 
     <ImageButton
-        android:id="@+id/imageButton13"
+        android:id="@+id/ibInstagram"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
@@ -65,7 +65,7 @@
         app:srcCompat="@drawable/instagram" />
 
     <TextView
-        android:id="@+id/tx_dondeir7"
+        android:id="@+id/tv5"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.923" />
 
     <TextView
-        android:id="@+id/tx_dondeir6"
+        android:id="@+id/tv3"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
@@ -99,7 +99,7 @@
         app:layout_constraintVertical_bias="0.637" />
 
     <TextView
-        android:id="@+id/tx_dondeir5"
+        android:id="@+id/tv6"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
@@ -116,7 +116,7 @@
         app:layout_constraintVertical_bias="0.92" />
 
     <TextView
-        android:id="@+id/tx_dondeir4"
+        android:id="@+id/tv1"
         android:layout_width="170dp"
         android:layout_height="22dp"
         android:fontFamily="casual"
@@ -133,7 +133,7 @@
         app:layout_constraintVertical_bias="0.361" />
 
     <TextView
-        android:id="@+id/tx_dondeir3"
+        android:id="@+id/tv4"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
@@ -150,7 +150,7 @@
         app:layout_constraintVertical_bias="0.637" />
 
     <TextView
-        android:id="@+id/tx_dondeir2"
+        android:id="@+id/tvDondeIr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-thin"
@@ -164,7 +164,7 @@
         app:layout_constraintVertical_bias="0.025" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/ib5"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:scaleType="fitXY"
@@ -178,7 +178,7 @@
         app:srcCompat="@drawable/e" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/ib3"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:scaleType="fitXY"
@@ -191,7 +191,7 @@
         app:srcCompat="@drawable/c" />
 
     <ImageButton
-        android:id="@+id/rio"
+        android:id="@+id/ib1"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:scaleType="fitXY"
@@ -219,7 +219,7 @@
         app:srcCompat="@drawable/b" />
 
     <ImageButton
-        android:id="@+id/cuzco25"
+        android:id="@+id/ib2"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:scaleType="fitXY"
@@ -232,7 +232,7 @@
         app:layout_constraintVertical_bias="0.13"
         app:srcCompat="@drawable/b" />
     <ImageButton
-        android:id="@+id/roma"
+        android:id="@+id/ib4"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:scaleType="fitXY"
@@ -245,7 +245,7 @@
         app:srcCompat="@drawable/d" />
 
     <TextView
-        android:id="@+id/tx_dondeir"
+        android:id="@+id/tv2"
         android:layout_width="170dp"
         android:layout_height="19dp"
         android:fontFamily="casual"
@@ -262,7 +262,7 @@
         app:layout_constraintVertical_bias="0.359" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bSuscribirte"
         android:layout_width="170dp"
         android:layout_height="46dp"
         android:layout_marginBottom="4dp"
@@ -274,7 +274,7 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <ImageButton
-        android:id="@+id/agra"
+        android:id="@+id/ib6"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:scaleType="fitXY"
