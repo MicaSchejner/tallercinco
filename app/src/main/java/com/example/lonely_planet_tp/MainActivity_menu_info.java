@@ -21,7 +21,7 @@ public class MainActivity_menu_info extends AppCompatActivity {
         botonrio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity_actividades.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity_actividad.class);
                 Bundle bundle = new Bundle();
                 startActivity(intent);
             }

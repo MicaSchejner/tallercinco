@@ -5,11 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity_actividades"
-    tools:showIn="@layout/activity_actividades">
+    tools:context=".MainActivity_actividad"
+    tools:showIn="@layout/activity_actividad">
+
+    <ImageView
+        android:id="@+id/iv_lugar"
+        android:layout_width="410dp"
+        android:layout_height="221dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14"
+        app:srcCompat="@drawable/jesus"/>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mvMapa"
+        android:layout_width="408dp"
+        android:layout_height="265dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856" />
 
     <TextView
-        android:id="@+id/tx_dondeir8"
+        android:id="@+id/tv_lugar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-thin"
@@ -21,10 +45,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.024"  />
 
     <TextView
-        android:id="@+id/tx_dondeir2"
+        android:id="@+id/tvActividades"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-thin"
@@ -38,7 +62,7 @@
         app:layout_constraintVertical_bias="0.474" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bCompartir"
         android:layout_width="170dp"
         android:layout_height="46dp"
         android:layout_marginBottom="4dp"
@@ -47,26 +71,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="410dp"
-        android:layout_height="221dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14"
-        app:srcCompat="@drawable/jesus" />
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView2"
-        android:layout_width="408dp"
-        android:layout_height="265dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="350dp" />
-
+        />
 </android.support.constraint.ConstraintLayout>
