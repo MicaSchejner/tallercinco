@@ -12,6 +12,6 @@
     <string name="buttontoast">toast</string>
     <string name="hintnombre">Nombre</string>
     <string name="buttoncompartir">compartir</string>
-    <string name="title_activity_actividad">MainActivity_actividad</string>
+    <string name="title_activity_main_actividad">MainActivity_actividad</string>
 
 </resources>
