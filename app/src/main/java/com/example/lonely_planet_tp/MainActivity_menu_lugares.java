@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_menu_lugares extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         botonrio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Main3Activity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity_menu_info.class);
                 Bundle bundle = new Bundle();
                 startActivity(intent);
             }

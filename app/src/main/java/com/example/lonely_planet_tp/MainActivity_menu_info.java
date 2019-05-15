@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.content.Intent;
 
-public class Main3Activity extends AppCompatActivity {
+public class MainActivity_menu_info extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class Main3Activity extends AppCompatActivity {
         botonrio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Main4Activity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity_actividades.class);
                 Bundle bundle = new Bundle();
                 startActivity(intent);
             }
