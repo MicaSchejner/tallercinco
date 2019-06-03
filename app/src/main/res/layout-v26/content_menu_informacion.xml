@@ -21,8 +21,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862"
-        app:srcCompat="@drawable/ocio"
-        android:contentDescription="@string/todo" tools:targetApi="o" />
+        app:srcCompat="@drawable/ocio" />
 
     <ImageButton
         android:id="@+id/ibTransporte"
@@ -37,8 +36,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.537"
-        app:srcCompat="@drawable/transporte" tools:targetApi="o"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/transporte" />
 
     <ImageButton
         android:id="@+id/ibDormir"
@@ -53,8 +51,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13"
-        app:srcCompat="@drawable/hoteles"
-        android:contentDescription="@string/todo" tools:targetApi="o" />
+        app:srcCompat="@drawable/hoteles" />
 
     <ImageButton
         android:id="@+id/ibActividades"
@@ -70,7 +67,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.133"
         app:srcCompat="@drawable/actividades"
-        android:contentDescription="@string/todo" tools:targetApi="o" />
+        android:contentDescription="@string/todo" />
 
     <ImageButton
         android:id="@+id/ibComer"
@@ -86,7 +83,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.537"
         app:srcCompat="@drawable/comida"
-        android:contentDescription="@string/todo" tools:targetApi="o" />
+        android:contentDescription="@string/todo" />
 
     <ImageButton
         android:id="@+id/ibRecomendados"
@@ -101,8 +98,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862"
-        app:srcCompat="@drawable/recomendado" tools:targetApi="o"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/recomendado" tools:targetApi="o" />
 
     <ImageButton
         android:id="@+id/ibInstagram"
@@ -116,8 +112,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.99"
-        app:srcCompat="@drawable/instagram"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/instagram" />
 
     <ImageButton
         android:id="@+id/ibFacebook"
@@ -131,8 +126,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.99"
-        app:srcCompat="@drawable/facebook"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/facebook" />
 
     <ImageButton
         android:id="@+id/ibTwitter"
@@ -162,7 +156,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.989"
         app:srcCompat="@drawable/pinterest"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/tvRecomendados"
