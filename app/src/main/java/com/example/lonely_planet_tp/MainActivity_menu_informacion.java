@@ -29,4 +29,9 @@ public class MainActivity_menu_informacion extends AppCompatActivity {
         });
     }
 
+    public void GoToMap(View view){
+        Intent intent = new Intent(this,DondeComerActivity.class);
+        startActivity(intent);
+    }
+
 }

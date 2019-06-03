@@ -14,5 +14,6 @@
     <string name="buttoncompartir">compartir</string>
     <string name="title_main_actividad">MainActivity_actividad</string>
     <string name="title_activity_main_menu_informacion">MainActivity_menu_informacion</string>
+    <string name="title_activity_donde_comer">Donde Comer</string>
 
 </resources>

@@ -66,10 +66,5 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 */
-    public void GoToMap(View view){
-        Intent intent = new Intent(this,MapsActivity.class);
-        startActivity(intent);
-    }
-
 
 }
