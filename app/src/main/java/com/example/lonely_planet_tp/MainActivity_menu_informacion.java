@@ -23,8 +23,10 @@ public class MainActivity_menu_informacion extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Bundle parametros = this.getIntent().getExtras();
-        String idCiudad = "1";
-
+        String idCiudad = "";
+        if(parametros !=null){
+            idCiudad = parametros.getString("idCiudad");
+        }
         TextView tv = (TextView) findViewById(R.id.tvLugar);
         b = new BasedeDatos(this,"Ciudades",null,2);
         db = b.getWritableDatabase();
