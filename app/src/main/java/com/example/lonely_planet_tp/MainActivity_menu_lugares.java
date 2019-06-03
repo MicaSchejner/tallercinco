@@ -43,6 +43,8 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
         ImageButton ib4 = findViewById(R.id.ib4);
         ImageButton ib5 = findViewById(R.id.ib5);
         ImageButton ib6 = findViewById(R.id.ib6);
+        ImageButton ibspin = findViewById(R.id.ibspin);
+
         spinnerciudades=(Spinner) findViewById(R.id.spinnerCiudades);
 
         b = new BasedeDatos(this,"Ciudades",null,2);
@@ -140,6 +142,18 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
             }
         });
 
+        ibspin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity_menu_informacion.class);
+                TextView tv = findViewById(R.id.tvCiudades);
+                String idCiudad = tv.getText().toString();
+
+                intent.putExtra("idCiudad",idCiudad);
+                Bundle bundle = new Bundle();
+                startActivity(intent);
+            }
+        });
 
         Button bboton = (Button)findViewById(R.id.bSuscribirte);
         bboton.setOnClickListener(new View.OnClickListener() {

@@ -41,7 +41,7 @@ public class MainActivity_menu_informacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity_actividad.class);
-                String idCiudad = getIntent().getExtras().getString("idPais");
+                String idCiudad = getIntent().getExtras().getString("idCiudad");
                 intent.putExtra("idCiudad",idCiudad);
                 Bundle bundle = new Bundle();
                 startActivity(intent);
