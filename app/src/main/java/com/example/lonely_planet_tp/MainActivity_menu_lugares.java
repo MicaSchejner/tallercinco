@@ -73,10 +73,10 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity_menu_informacion.class);
-                int idCiudad = 1;
+                String idCiudad = "1";
 
                 intent.putExtra("idCiudad",idCiudad);
-
+                Bundle bundle = new Bundle();
                 startActivity(intent);
             }
         });
@@ -85,6 +85,7 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity_menu_informacion.class);
                 String idCiudad = "2";
+
                 intent.putExtra("idCiudad",idCiudad);
                 Bundle bundle = new Bundle();
                 startActivity(intent);
@@ -94,7 +95,8 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity_menu_informacion.class);
-                int idCiudad = 3;
+                String idCiudad = "3";
+
                 intent.putExtra("idCiudad",idCiudad);
                 Bundle bundle = new Bundle();
                 startActivity(intent);
@@ -104,7 +106,8 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity_menu_informacion.class);
-                int idCiudad = 4;
+                String idCiudad = "4";
+
                 intent.putExtra("idCiudad",idCiudad);
                 Bundle bundle = new Bundle();
                 startActivity(intent);
@@ -114,7 +117,8 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity_menu_informacion.class);
-                int idCiudad = 5;
+                String idCiudad = "5";
+
                 intent.putExtra("idCiudad",idCiudad);
                 Bundle bundle = new Bundle();
                 startActivity(intent);
@@ -126,7 +130,8 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity_menu_informacion.class);
-                int idCiudad = 6;
+                String idCiudad = "6";
+
                 intent.putExtra("idCiudad",idCiudad);
                 Bundle bundle = new Bundle();
                 startActivity(intent);
