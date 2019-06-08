@@ -1,6 +1,7 @@
 package com.example.lonely_planet_tp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -155,12 +156,42 @@ public class MainActivity_menu_lugares extends AppCompatActivity {
             }
         });
 
-        Button bboton = (Button)findViewById(R.id.bSuscribirte);
-        bboton.setOnClickListener(new View.OnClickListener() {
+        ImageButton binstagram = findViewById(R.id.ibInstagram);
+        binstagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity_menu_informacion.class);
-                Bundle bundle = new Bundle();
+                Uri uri = Uri.parse("https://www.instagram.com/despegar/?hl=es-la");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btwitter = findViewById(R.id.ibTwitter);
+        btwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://twitter.com/despegar?lang=es");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton bpinterest = findViewById(R.id.ibPinterest);
+        bpinterest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://ar.pinterest.com/despegarcom/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton bface = findViewById(R.id.ibFacebook);
+        bface.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://www.facebook.com/DespegarArgentina/?brand_redir=95188452883");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
         });

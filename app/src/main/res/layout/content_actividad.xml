@@ -18,19 +18,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14"
-        app:srcCompat="@drawable/jesus"/>
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mvMapa"
-        android:layout_width="408dp"
-        android:layout_height="265dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856" />
+        app:layout_constraintVertical_bias="0.14" />
 
     <TextView
         android:id="@+id/tv_lugar"
@@ -59,18 +47,53 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474" />
+        app:layout_constraintVertical_bias="0.481" />
 
-    <Button
-        android:id="@+id/bCompartir"
-        android:layout_width="170dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="4dp"
-        android:cursorVisible="false"
-        android:text="@string/buttoncompartir"
+    <TextView
+        android:id="@+id/tv_descripcion"
+        android:layout_width="401dp"
+        android:layout_height="252dp"
+        android:fontFamily="sans-serif-thin"
+        android:scrollbars="vertical"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871"/>
+
+    <ImageButton
+        android:id="@+id/ibatras"
+        android:layout_width="48dp"
+        android:layout_height="38dp"
+        android:backgroundTintMode="screen"
+        android:scaleType="fitCenter"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:tooltipText="Ir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.996"
+        app:srcCompat="@drawable/botonizq" />
+
+    <ImageButton
+        android:id="@+id/ibmap"
+        android:layout_width="54dp"
+        android:layout_height="43dp"
+        android:backgroundTintMode="screen"
+        android:scaleType="fitCenter"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:tooltipText="Ir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/googlemap" />
 </android.support.constraint.ConstraintLayout>

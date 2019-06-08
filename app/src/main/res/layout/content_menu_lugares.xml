@@ -15,11 +15,11 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.324"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989"
+        app:layout_constraintVertical_bias="0.99"
         app:srcCompat="@drawable/pinterest" />
 
     <ImageButton
@@ -29,21 +29,21 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989"
+        app:layout_constraintVertical_bias="0.99"
         app:srcCompat="@drawable/twitter" />
 
     <ImageButton
-        android:id="@+id/tvFacebook"
+        android:id="@+id/ibFacebook"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintHorizontal_bias="0.664"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -57,7 +57,7 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.324"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -176,7 +176,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862"
-        app:srcCompat="@drawable/e" />
+        app:srcCompat="@drawable/menupais_5" />
 
     <ImageButton
         android:id="@+id/ib3"
@@ -189,7 +189,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/c" />
+        app:srcCompat="@drawable/menupais_2" />
 
     <ImageButton
         android:id="@+id/ib1"
@@ -203,7 +203,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13"
-        app:srcCompat="@drawable/a" />
+        app:srcCompat="@drawable/menupais_1" />
 
     <ImageButton
         android:id="@+id/cuzco2"
@@ -217,7 +217,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13"
-        app:srcCompat="@drawable/b" />
+        app:srcCompat="@drawable/menupais_2" />
 
     <ImageButton
         android:id="@+id/ib2"
@@ -231,7 +231,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13"
-        app:srcCompat="@drawable/b" />
+        app:srcCompat="@drawable/menupais_2" />
     <ImageButton
         android:id="@+id/ib4"
         android:layout_width="169dp"
@@ -243,7 +243,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/d" />
+        app:srcCompat="@drawable/menupais_4" />
 
     <TextView
         android:id="@+id/tv2"
@@ -262,18 +262,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.359" />
 
-    <Button
-        android:id="@+id/bSuscribirte"
-        android:layout_width="170dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="4dp"
-        android:cursorVisible="false"
-        android:text="@string/buttonir"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
     <ImageButton
         android:id="@+id/ib6"
         android:layout_width="169dp"
@@ -286,14 +274,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862"
-        app:srcCompat="@drawable/f" />
+        app:srcCompat="@drawable/menupais_6" />
 
     <Spinner
         android:id="@+id/spinnerCiudades"
         android:layout_width="154dp"
         android:layout_height="34dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintHorizontal_bias="0.735"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -313,14 +301,18 @@
 
     <ImageButton
         android:id="@+id/ibspin"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTintMode="screen"
+        android:scaleType="fitXY"
+        android:tooltipText="Ir"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.004"
+        app:srcCompat="@drawable/botonder" />
 
 </android.support.constraint.ConstraintLayout>

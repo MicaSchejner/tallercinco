@@ -6,6 +6,94 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity_recomendado"
-    tools:showIn="@layout/activity_main_recomendado">
+    tools:showIn="@layout/activity_recomendado">
 
+    <ImageView
+        android:id="@+id/iv_lugar"
+        android:layout_width="410dp"
+        android:layout_height="221dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <TextView
+        android:id="@+id/tv_recomendado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:text="Recomendados"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481"   />
+
+    <TextView
+        android:id="@+id/tv_descripcion"
+        android:layout_width="401dp"
+        android:layout_height="252dp"
+        android:fontFamily="sans-serif-thin"
+        android:scrollbars="vertical"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871"  />
+
+    <TextView
+        android:id="@+id/tv_lugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:text="( LUGAR )"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024"  />
+
+    <ImageButton
+        android:id="@+id/ibatras"
+        android:layout_width="48dp"
+        android:layout_height="38dp"
+        android:backgroundTintMode="screen"
+        android:scaleType="fitCenter"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:tooltipText="Ir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.996"
+        app:srcCompat="@drawable/botonizq"  />
+
+    <ImageButton
+        android:id="@+id/ibmap"
+        android:layout_width="55dp"
+        android:layout_height="43dp"
+        android:backgroundTintMode="screen"
+        android:scaleType="fitCenter"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:tooltipText="Ir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/googlemap" />
 </android.support.constraint.ConstraintLayout>

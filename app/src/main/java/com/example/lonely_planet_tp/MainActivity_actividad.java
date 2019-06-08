@@ -1,5 +1,6 @@
 package com.example.lonely_planet_tp;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,13 +8,16 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.text.method.ScrollingMovementMethod;
 import java.util.ArrayList;
 
 public class MainActivity_actividad extends AppCompatActivity {
     private BasedeDatos b;
     private SQLiteDatabase db;
+    String idCiudad = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +25,7 @@ public class MainActivity_actividad extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Bundle parametros = this.getIntent().getExtras();
-        String idCiudad = "";
+
         if(parametros !=null){
             idCiudad = parametros.getString("idCiudad");
         }
@@ -33,6 +37,37 @@ public class MainActivity_actividad extends AppCompatActivity {
 
         tv.setText(ciudades.get(0).getNombre());
 
+
+        TextView tvdesc = (TextView) findViewById(R.id.tv_descripcion);
+
+        final ArrayList<String> desc = (ArrayList<String>) b.getActividades(Integer.parseInt(idCiudad));
+
+        tvdesc.setText(desc.get(0));
+
+
+
+        tvdesc.setMovementMethod(new ScrollingMovementMethod());
+
+
+
+        ImageView ivlugar = (ImageView) findViewById(R.id.iv_lugar);
+        int resID = getResources().getIdentifier("actividad" +idCiudad.toString()  , "drawable", getPackageName());
+        ivlugar.setImageResource(resID);
+
+
+        ImageButton ib = findViewById(R.id.ibatras);
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity_menu_informacion.class);
+
+                intent.putExtra("idCiudad",idCiudad);
+                Bundle bundle = new Bundle();
+                startActivity(intent);
+
+
+            }
+        });
     }
 
 }
