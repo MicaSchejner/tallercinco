@@ -87,8 +87,7 @@
         app:layout_constraintVertical_bias="0.537"
         app:srcCompat="@drawable/comida"
         android:contentDescription="@string/todo" tools:targetApi="o" />
-        app:srcCompat="@drawable/comida"
-        android:onClick="GoToMap"/>
+        app:srcCompat="@drawable/comida" />
 
     <ImageButton
         android:id="@+id/ibRecomendados"

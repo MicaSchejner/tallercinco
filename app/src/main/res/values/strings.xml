@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">lonely_planet_tp</string>
+    <string name="app_name">Viajes</string>
     <string name="actividades">Actividades</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_pases">Pases</string>
@@ -11,14 +11,14 @@
     <string name="buttonir">suscribirte</string>
     <string name="buttontoast">toast</string>
     <string name="hintnombre">Nombre</string>
-    <string name="buttoncompartir">compartir</string>
-    <string name="title_main_actividad">MainActivity_actividad</string>
-    <string name="title_activity_main_menu_informacion">MainActivity_menu_informacion</string>
+    <string name="buttoncompartir">Compartir</string>
+    <string name="title_main_actividad">Actividades</string>
+    <string name="title_activity_main_menu_informacion">Menu ciudad</string>
     <string name="title_activity_donde_comer">Donde Comer</string>
     <string name="donde_dormir">Donde dormir</string>
     <string name="transporte">Transporte</string>
     <string name="donde_comer">Donde Comer</string>
-    <string name="recomendados">recomendados</string>
+    <string name="recomendados">Recomendados</string>
     <string name="todo">TODO</string>
     <string name="lugar">( LUGAR )</string>
     <string name="ocio">ocio</string>
