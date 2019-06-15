@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity_actividad"
-    tools:showIn="@layout/activity_actividad">
+    tools:context=".MainActivity_recomendado"
+    tools:showIn="@layout/activity_recomendado">
 
     <ImageView
         android:id="@+id/iv_lugar"
@@ -19,6 +19,34 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.14" />
+
+    <TextView
+        android:id="@+id/tv_recomendado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:text="Recomendados"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481"   />
+
+    <TextView
+        android:id="@+id/tv_descripcion"
+        android:layout_width="401dp"
+        android:layout_height="252dp"
+        android:fontFamily="sans-serif-thin"
+        android:scrollbars="vertical"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871"  />
 
     <TextView
         android:id="@+id/tv_lugar"
@@ -35,34 +63,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024"  />
 
-    <TextView
-        android:id="@+id/tvActividades"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-thin"
-        android:text="Actividades"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
-
-    <TextView
-        android:id="@+id/tv_descripcion"
-        android:layout_width="401dp"
-        android:layout_height="252dp"
-        android:fontFamily="sans-serif-thin"
-        android:scrollbars="vertical"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871"/>
-
     <ImageButton
         android:id="@+id/ibatras"
         android:layout_width="48dp"
@@ -78,11 +78,11 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.996"
-        app:srcCompat="@drawable/botonizq" />
+        app:srcCompat="@drawable/botonizq"  />
 
     <ImageButton
         android:id="@+id/ibmap"
-        android:layout_width="54dp"
+        android:layout_width="55dp"
         android:layout_height="43dp"
         android:backgroundTintMode="screen"
         android:scaleType="fitCenter"

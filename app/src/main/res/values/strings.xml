@@ -16,12 +16,17 @@
     <string name="title_activity_main_menu_informacion">Menu ciudad</string>
     <string name="title_activity_donde_comer">Donde Comer</string>
     <string name="donde_dormir">Donde dormir</string>
-    <string name="transporte">Transporte</string>
+    <string name="transporte">Como moverse</string>
     <string name="donde_comer">Donde Comer</string>
     <string name="recomendados">Recomendados</string>
     <string name="todo">TODO</string>
     <string name="lugar">( LUGAR )</string>
-    <string name="ocio">ocio</string>
+    <string name="ocio">"Donde Descansar"</string>
+    <string name="title_activity_main_dormir">MainActivity_dormir</string>
+    <string name="title_activity_main_comida">MainActivity_comida</string>
+    <string name="title_activity_main_transporte">MainActivity_transporte</string>
+    <string name="title_activity_main_recomendado">MainActivity_recomendado</string>
+    <string name="title_activity_main_ocio">MainActivity_ocio</string>
 
 
 </resources>

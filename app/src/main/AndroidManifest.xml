@@ -33,6 +33,26 @@
             android:name=".DondeComerActivity"
             android:label="@string/title_activity_donde_comer"></activity>
         <activity
+            android:name=".MainActivity_ocio"
+            android:label="@string/title_activity_main_ocio"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".MainActivity_recomendado"
+            android:label="@string/title_activity_main_recomendado"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity_transporte"
+            android:label="@string/title_activity_main_transporte"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity_comida"
+            android:label="@string/title_activity_main_comida"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity_dormir"
+            android:label="@string/title_activity_main_dormir"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".MainActivity_menu_informacion"
             android:label="@string/title_activity_main_menu_informacion"
             android:theme="@style/AppTheme.NoActionBar" />

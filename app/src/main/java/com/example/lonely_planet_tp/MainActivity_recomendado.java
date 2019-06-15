@@ -7,21 +7,22 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.text.method.ScrollingMovementMethod;
+
 import java.util.ArrayList;
 
-public class MainActivity_actividad extends AppCompatActivity {
+public class MainActivity_recomendado extends AppCompatActivity {
     private BasedeDatos b;
     private SQLiteDatabase db;
     String idCiudad = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_actividad);
+        setContentView(R.layout.activity_recomendado);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Bundle parametros = this.getIntent().getExtras();
@@ -40,20 +41,15 @@ public class MainActivity_actividad extends AppCompatActivity {
 
         TextView tvdesc = (TextView) findViewById(R.id.tv_descripcion);
 
-        final ArrayList<String> desc = (ArrayList<String>) b.getActividades(Integer.parseInt(idCiudad));
+        final ArrayList<String> desc = (ArrayList<String>) b.getRecomendados(Integer.parseInt(idCiudad));
 
         tvdesc.setText(desc.get(0));
 
-
-
         tvdesc.setMovementMethod(new ScrollingMovementMethod());
 
-
-
         ImageView ivlugar = (ImageView) findViewById(R.id.iv_lugar);
-        int resID = getResources().getIdentifier("actividad" +idCiudad.toString()  , "drawable", getPackageName());
+        int resID = getResources().getIdentifier("recomendado" +idCiudad.toString()  , "drawable", getPackageName());
         ivlugar.setImageResource(resID);
-
 
         ImageButton ib = findViewById(R.id.ibatras);
         ib.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +64,7 @@ public class MainActivity_actividad extends AppCompatActivity {
 
             }
         });
+
     }
 
 }
