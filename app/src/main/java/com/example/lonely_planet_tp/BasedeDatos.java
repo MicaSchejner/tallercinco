@@ -218,10 +218,17 @@ public class BasedeDatos  extends SQLiteOpenHelper {
                 "La ciudad de Cusco, en especial, posee alguno de los mejores platos de los Andes Peruanos donde prevalece el uso de la papa y el maíz. Si bien es un destino muy elegido por los turistas por su historia, paisajes andinos y sus construcciones incaicas, la gastronomía se ha vuelto hoy en día parte fundamental de las atracciones turísticas.\n" +
                 "\n" +
                 "Los lugares habituales para comer los platos típicos son restaurantes tradicionales llamados picanterías o chicherías. Los mejores están ubicados alrededor de la Plaza de Armas y algunos ofrecen peñas, es decir, música en vivo con danzas folcklóricas.");
-        GuardarComer(3,"Pekin");
-        GuardarComer(4,"Roma");
-        GuardarComer(5,"Petra");
-        GuardarComer(6,"Agra");
+        GuardarComer(3,"Los platos chinos, sabrosos y sobradamente condimentados, suelen mezclar los sabores más dulces con los ácidos, amargos, salados y picantes.\n" +
+                "\n" +
+                "El componente básico de las comidas es el arroz, que suele servirse acompañado de todo tipo de verduras, carnes y pescado de los que se utiliza hasta la parte más remota. Los largos periodos de hambruna que han asolado el país a lo largo de la historia han influido en que todas las partes del animal (cartílagos, garras, entrañas, cabezas) sean aptas para preparar los condimentados platos");
+        GuardarComer(4,"La gastronomía italiana es una de las más conocidas y apreciadas a nivel mundial. Una prueba de esto es que es difícil encontrar a alguien que no haya probado la pizza, los raviolis o la lasaña.\n" +
+                "\n" +
+                "Además de los diferentes tipos de pasta y las pizzas, Roma cuenta muchos otros platos característicos, como la bruschetta (pan tostado, aceite, ajo y sal), los panini (sándwich típico), diferentes tipos de carnes y pescados condimentados con especias (como el famoso pescado a la romana), el carpaccio, los quesos (especialmente el pecorino) y algunos embutidos (bresaola, mortadela, prosciutto y saltimbocca).");
+        GuardarComer(5,"La Gastronomía de Jordania se distingue poco de la cocina de sus países vecinos Siria o el Líbano. Se trata de un país musulmán y por lo tanto los ingredientes se ven regulados por las normas del Islam. El plato nacional de Jordania es el Mansaf, aunque es frecuente ver también el musakhan o el maglouba");
+        GuardarComer(6,"No te puedes ir sin probar el dulce típico de allí Petha, los puedes encontrar en multitud de tiendas en Taj Ganj. Están riquísimos, son como una especie de gelatina espesa, muy dulce y refrescante. Hay de varios sabores y una caja te cuesta alrededor de 150 rps.\n" +
+                "Taj Cafe:\n" +
+                "En Taj Ganj a 200m del hostal (Shanti Lodge) está el Taj Café, un restaurante familiar y acogedor donde el wifi va bastante bien para ser India. Los precios son bajos y el ambiente es muy relajado. Desde la terraza puedes ver el Tah Mahal. La comida es buena y barata, puedes desayunar tostadas, café y tortilla por 60rps. El dueño es muy amable y el chai está muy rico.\n" +
+                "M.G restaurant: Está al lado del Taj Café en Taj Ganj, justo al doblar la esquina. Está adornado con leds de colores al más puro estilo navideño. La comida es muy abundante y los precios medios. El dueño es un tipo muy majo y curioso que no dudará en sentarse contigo mientras comes para hacerte preguntas hasta saciar su curiosidad.");
     }
 
     public List<String> getTransporte(int id) {
