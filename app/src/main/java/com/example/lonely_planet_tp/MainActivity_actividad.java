@@ -45,10 +45,7 @@ public class MainActivity_actividad extends AppCompatActivity {
         tvdesc.setText(desc.get(0));
 
 
-
         tvdesc.setMovementMethod(new ScrollingMovementMethod());
-
-
 
         ImageView ivlugar = (ImageView) findViewById(R.id.iv_lugar);
         int resID = getResources().getIdentifier("actividad" +idCiudad.toString()  , "drawable", getPackageName());
@@ -68,6 +65,7 @@ public class MainActivity_actividad extends AppCompatActivity {
 
             }
         });
+
     }
 
 }

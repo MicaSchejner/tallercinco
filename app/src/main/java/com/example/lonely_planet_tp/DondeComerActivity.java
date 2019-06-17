@@ -16,9 +16,19 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class DondeComerActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private double lon;
+    private double lat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Bundle parametros = this.getIntent().getExtras();
+        if(parametros !=null){
+            setLon(parametros.getDouble("lng"));
+            setLat(parametros.getDouble("lat"));
+        }
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donde_comer);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -44,6 +54,9 @@ public class DondeComerActivity extends FragmentActivity implements OnMapReadyCa
         mMap = googleMap;
 
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        double lo = this.getLon();
+        double la = this.getLat();
         //mMap.setPadding(10,10,10,10);
 
         // Add a marker in Sydney and move the camera
@@ -65,10 +78,27 @@ public class DondeComerActivity extends FragmentActivity implements OnMapReadyCa
 //            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
         }else{
-            LatLng rio = new LatLng(-22, -43);
-            mMap.addMarker(new MarkerOptions().position(rio).title("Marker in Rio"));
+//            LatLng rio = new LatLng(-22, -43);
+            LatLng rio = new LatLng(la, lo);
+            mMap.addMarker(new MarkerOptions().position(rio).title("Marker in mica"));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(rio));
         }
 
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
     }
 }

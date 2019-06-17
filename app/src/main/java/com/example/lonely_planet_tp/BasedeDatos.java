@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasedeDatos  extends SQLiteOpenHelper {
-    String sqlCreateCiudades     = "CREATE TABLE ciudades(id INTEGER PRIMARY KEY , descripcion TEXT)";
+    String sqlCreateCiudades     = "CREATE TABLE ciudades(id INTEGER PRIMARY KEY , descripcion TEXT,latitud DECIMAL, longitud DECIMAL)";
     String sqlCreateActividades  = "CREATE TABLE ciudades_actividades(id INTEGER PRIMARY KEY , descripcion TEXT)";
     String sqlCreatedormir       = "CREATE TABLE ciudades_dormir(id INTEGER PRIMARY KEY , descripcion TEXT)";
     String sqlCreatecomer        = "CREATE TABLE ciudades_comer(id INTEGER PRIMARY KEY , descripcion TEXT)";
@@ -55,7 +55,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
 
     public List<Ciudad> getCiudades() {
         List<Ciudad> ejemploList = new ArrayList<Ciudad>();
-        String selectQuery = "SELECT  * FROM ciudades order by 2";
+        String selectQuery = "SELECT  * FROM ciudades";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
@@ -64,7 +64,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         }
         if (cursor.moveToFirst()) {
             do {
-                Ciudad ciudad = new Ciudad(Integer.parseInt(cursor.getString(0)),cursor.getString(1));
+                Ciudad ciudad = new Ciudad(Integer.parseInt(cursor.getString(0)),cursor.getString(1), cursor.getDouble(2),cursor.getDouble(3));
 
                 ejemploList.add(ciudad);
             } while (cursor.moveToNext());
@@ -74,7 +74,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
     }
     public List<Ciudad> getCiudades(int id) {
         List<Ciudad> ejemploList = new ArrayList<Ciudad>();
-        String selectQuery = "SELECT  * FROM ciudades WHERE id = " + id + " order by 2";
+        String selectQuery = "SELECT  * FROM ciudades WHERE id = " + id;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
@@ -83,7 +83,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         }
         if (cursor.moveToFirst()) {
             do {
-                Ciudad ciudad = new Ciudad(Integer.parseInt(cursor.getString(0)),cursor.getString(1));
+                Ciudad ciudad = new Ciudad(Integer.parseInt(cursor.getString(0)),cursor.getString(1), cursor.getDouble(2),cursor.getDouble(3));
 
                 ejemploList.add(ciudad);
             } while (cursor.moveToNext());
@@ -91,25 +91,27 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         cursor.close();
         return ejemploList;
     }
-    public void GuardarCiudad (int id, String descrip){
+    public void GuardarCiudad (int id, String descrip, double latitud, double longitud){
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contenedor = new ContentValues();
         contenedor.put("id", id);
         contenedor.put("descripcion", descrip);
+        contenedor.put("latitud", latitud);
+        contenedor.put("longitud", longitud);
         database.insertOrThrow("ciudades",null, contenedor);
     }
     public void CargarCiudades(){
-        GuardarCiudad(1,"Rio De Janeiro");
-        GuardarCiudad(2,"Cuzco");
-        GuardarCiudad(3,"Pekin");
-        GuardarCiudad(4,"Roma");
-        GuardarCiudad(5,"Petra");
-        GuardarCiudad(6,"Agra");
+        GuardarCiudad(1,"Rio De Janeiro",-22, -43);
+        GuardarCiudad(2,"Cuzco",-13,-71);
+        GuardarCiudad(3,"Pekin",39,116);
+        GuardarCiudad(4,"Roma",41,12);
+        GuardarCiudad(5,"Petra",30,35);
+        GuardarCiudad(6,"Agra",27,78);
     }
 
     public List<String> getActividades(int id) {
         List<String> List = new ArrayList<String>();
-        String selectQuery = "SELECT  * FROM ciudades_actividades WHERE id = " + id  +   " order by 1";
+        String selectQuery = "SELECT  * FROM ciudades_actividades WHERE id = " + id;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
@@ -133,8 +135,8 @@ public class BasedeDatos  extends SQLiteOpenHelper {
     }
     public void CargarActividades(){
         GuardarActividades(1,"Rio de Janeiro es sin lugar a dudas, una de las mejores ciudades de Sudamérica, para practicar todo tipo de deportes y actividades al aire libre. El clima tropical, la variedad de su geografía con los cerros asomándose sobre el mar, sus extensas playas y las decenas de kilómetros de paseos peatonales y ciclovías, invitan a aprovechar cada minuto para disfrutar de este paraíso urbano.Se puede recorrer la orla carioca en bicicleta para sentir la brisa del mar en la cara, o dar toda la vuelta a la Laguna Rodrigo de Freitas para observar las distintas perspectivas de los morros que la rodean. Allí mismo se puede probar a deslizarse sobre el agua practicando el esquí acuático ante la atenta mirada de las numerosas garzas.");
-        GuardarActividades(2,"Cuzco");
-        GuardarActividades(3,"Pekin");
+        GuardarActividades(2,"Cusco es uno de los principales destinos del mundo, es una ciudad enclavada majestuosamente en medio de un gigantesco valle alimentado por dos ríos; con un diseño urbanístico único, pues fue diseñada por los incas con la forma de un puma. Muchos de los mejores tesoros arquitectónicos de la ciudad, se pueden encontrar caminando por el centro histórico del Cusco; a través de estrechas calles con muros incas de piedra, sobre los cuales están construidos templos y residencias de la época de la colonia; ocasionando una fusión arquitectónica única, entre las culturas de los conquistadores (españoles) y los conquistados (incas). La mayoría de estos lugares se encuentran muy cerca de la Plaza de Armas del Cusco (plaza principal de la ciudad). Usted podrá recorrer fácilmente la mayoría de barrios tradicionales de esta ciudad, en medio día, y podrá cubrir la mayor parte de la ciudad en 3 o 4 días; y definitivamente lo invitamos a disfrutar de las noches del Cusco");
+        GuardarActividades(3,"Pekinn");
         GuardarActividades(4,"Roma");
         GuardarActividades(5,"Petra");
         GuardarActividades(6,"Agra");
@@ -142,7 +144,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
 
     public List<String> getDormir(int id) {
         List<String> List = new ArrayList<String>();
-        String selectQuery = "SELECT  * FROM ciudades_dormir WHERE id = "  + id +   " order by 1";
+        String selectQuery = "SELECT  * FROM ciudades_dormir WHERE id = "  + id;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
@@ -175,7 +177,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
 
     public List<String> getComer(int id) {
         List<String> List = new ArrayList<String>();
-        String selectQuery = "SELECT  * FROM ciudades_comer WHERE id = " + id +   " order by 1";
+        String selectQuery = "SELECT  * FROM ciudades_comer WHERE id = " + id;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
@@ -199,7 +201,11 @@ public class BasedeDatos  extends SQLiteOpenHelper {
     }
     public void CargarComer(){
         GuardarComer(1,"La comida en Río es muy variopinta, ya que sus platos son resultado de muchas influencias: indígenas, africanas, portuguesas, italianas, alemanas, árabes...Las recetas de Rio de Janeiro gustan mucho a los turistas por su peculiar sabor y la variedad de ingredientes, únicas en el mundo.Mariscos, arroz con frijoles, frutas tropicales, carne asada y derivados del maíz son algunos de los principales ingredientes que forman los platos autóctonos de Brasil, aunque cada región de Brasil tiene su repertorio de recetas determinadas por su herencia cultural, los ingredientes de la zona y lo que sea más apropiado comer según el clima.Una de las particularidades de la gastronomia de Rio de Janeiro son las churrasquerías que se hallan por toda la ciudad y que ofrecen diferentes cortes de carnes a sus clientes. La gama de ensaladas de frutas y verduras es muy amplia en estos locales. Comer en estos sitios permite acercarse a la cocina brasileña más auténtica, ya que se puede probar un poco de todo y el precio es muy asequible para todos los bolsillos.Hay también una serie de frutas que tienes que probar en Río, como maracuyá (fruta de la pasión), guayaba, papaya, caña de azúcar, coco y mango, cuyos sabores son realmente espectaculares. ");
-        GuardarComer(2,"Cuzco");
+        GuardarComer(2,"La gastronomía de Perú ha sido clasificada por muchos chefs expertos como una de las mejores del mundo tanto por su gran variedad de sabores y aromas, tan auténticos como antiguos, como por su riqueza alimenticia.\n" +
+                "\n" +
+                "La ciudad de Cusco, en especial, posee alguno de los mejores platos de los Andes Peruanos donde prevalece el uso de la papa y el maíz. Si bien es un destino muy elegido por los turistas por su historia, paisajes andinos y sus construcciones incaicas, la gastronomía se ha vuelto hoy en día parte fundamental de las atracciones turísticas.\n" +
+                "\n" +
+                "Los lugares habituales para comer los platos típicos son restaurantes tradicionales llamados picanterías o chicherías. Los mejores están ubicados alrededor de la Plaza de Armas y algunos ofrecen peñas, es decir, música en vivo con danzas folcklóricas.");
         GuardarComer(3,"Pekin");
         GuardarComer(4,"Roma");
         GuardarComer(5,"Petra");
@@ -208,7 +214,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
 
     public List<String> getTransporte(int id) {
         List<String> List = new ArrayList<String>();
-        String selectQuery = "SELECT  * FROM ciudades_transporte WHERE id = " + id +   " order by 1";
+        String selectQuery = "SELECT  * FROM ciudades_transporte WHERE id = " + id ;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
@@ -232,8 +238,8 @@ public class BasedeDatos  extends SQLiteOpenHelper {
     }
     public void CargarTransporte(){
         GuardarTransporte(1,"En términos generales, moverse por Rio de Janerio es sencillo y barato. El centro y los distintos barrios de la zona sur están muy bien comunicados entre sí y el metro es el medio de transporte más práctico para moverse por esta.El sistema de taxis también funciona bien, es seguro y resulta fácil encontrar uno libre porque hay muchos en circulación.El metro de Rio de Janeiro es rápido, cómodo, económico y seguro. Su precio es de R$4,10, tan sólo ligeramente mayor que el del autobús urbano y es más rápido que cualquier otro transporte a causa del intenso tráfico que hay en la ciudad. Tanto las líneas de autobuses de la ciudad como las paradas están organizadas en 5 grupos: BRS 1, BRS 2, BRS 3, BRS 4 y BRS 5. De esta manera cada autobus para sólo en la parada que le corresponda, es decir, aquella que coincida con el grupo al que pertenece. Todos ellos tienen indicado en su panel luminoso de la parte frontal su número y su grupo. Las Bicis Aunque lógicamente no es un medio de transporte para recorrer grandes distancias, en Rio de Janeiro existe una red de ciclovías muy extensa que une las playas de Sao Conrado, Leblon, Ipanema, Copacabana, Botafogo y Flamengo. Puede ser una forma muy divertida y saludable de llegar hasta alguna de estas playas.");
-        GuardarTransporte(2,"Cuzco");
-        GuardarTransporte(3,"Pekin");
+        GuardarTransporte(2,"Desplazarse en Cusco es muy sencillo, ya que muchos de los atractivos más impresionantes de la ciudad están a poca distancia del centro histórico y de la plaza de armas del Cusco. Puede trasladarse a ellos caminando, pero no es recomendable, ya que es necesario de algún tiempo de aclimatación en la ciudad, antes de realizar esfuerzo físico, de lo contrario corre el riesgo de enfermar de Mal de altura.Una de las mejores alternativas para desplazarse dentro de Cusco es utilizar el transporte público (buses y minibuses), que ofrecen tarifas muy económicas y cubren un trayecto predeterminado. Si quiere viajar un poco más cómodo, los taxis son una buena opción, pero hay que tener en cuenta que ninguna cuenta con taxímetro y por ello las tarifas deben pactarse de antemano.");
+        GuardarTransporte(3,"El crecimiento de la ciudad a partir de las reformas económicas ha convertido a Pekín en un importante nudo de transportes. La ciudad está rodeada de cinco anillos de circunvalación, nueve autopistas, once carreteras principales, diversas líneas de ferrocarril y un aeropuerto internacional.");
         GuardarTransporte(4,"Roma");
         GuardarTransporte(5,"Petra");
         GuardarTransporte(6,"Agra");
@@ -241,7 +247,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
 
     public List<String> getRecomendados(int id) {
         List<String> List = new ArrayList<String>();
-        String selectQuery = "SELECT  * FROM ciudades_recomendados WHERE id = " + id +   " order by 1";
+        String selectQuery = "SELECT  * FROM ciudades_recomendados WHERE id = " + id;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
@@ -274,7 +280,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
 
     public List<String> getOcio(int id) {
         List<String> List = new ArrayList<String>();
-        String selectQuery = "SELECT  * FROM ciudades_ocio WHERE id = " + id +   " order by 1";
+        String selectQuery = "SELECT  * FROM ciudades_ocio WHERE id = " + id;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);

@@ -69,6 +69,24 @@ public class MainActivity_comida extends AppCompatActivity {
             }
         });
 
+        final double lng = ciudades.get(0).getLng();
+        final double lat = ciudades.get(0).getLat();
+
+        ImageButton ib_map = findViewById(R.id.ibmap);
+        ib_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), DondeComerActivity.class);
+
+                intent.putExtra("lng",lng);
+                intent.putExtra("lat", lat);
+                Bundle bundle = new Bundle();
+                startActivity(intent);
+
+
+            }
+        });
+
     }
 
 }
