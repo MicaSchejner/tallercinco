@@ -13,6 +13,7 @@
         android:layout_width="169dp"
         android:layout_height="130dp"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,13 +23,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862"
         app:srcCompat="@drawable/ocio"
-        android:contentDescription="@string/todo" tools:targetApi="o" />
+        tools:targetApi="o" />
 
     <ImageButton
         android:id="@+id/ibTransporte"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,47 +38,33 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
-        app:srcCompat="@drawable/transporte" tools:targetApi="o"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.499"
+        app:srcCompat="@drawable/transporte"
+        tools:targetApi="o" />
 
     <ImageButton
         android:id="@+id/ibDormir"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13"
+        app:layout_constraintVertical_bias="0.102"
         app:srcCompat="@drawable/hoteles"
-        android:contentDescription="@string/todo" tools:targetApi="o" />
+        tools:targetApi="o" />
 
     <ImageButton
         android:id="@+id/ibActividades"
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        android:tooltipText="Send an email"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133"
-        app:srcCompat="@drawable/actividades"
-        android:contentDescription="@string/todo" tools:targetApi="o" />
-
-    <ImageButton
-        android:id="@+id/ibComer"
-        android:layout_width="169dp"
-        android:layout_height="160dp"
-        android:background="#00FFFFFF"
+        android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,9 +72,26 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
+        app:layout_constraintVertical_bias="0.106"
+        app:srcCompat="@drawable/actividades"
+        tools:targetApi="o" />
+
+    <ImageButton
+        android:id="@+id/ibComer"
+        android:layout_width="169dp"
+        android:layout_height="160dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitXY"
+        android:tooltipText="Send an email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
         app:srcCompat="@drawable/comida"
-        android:contentDescription="@string/todo" tools:targetApi="o" />
+        tools:targetApi="o" />
         app:srcCompat="@drawable/comida" />
 
     <ImageButton
@@ -94,16 +99,17 @@
         android:layout_width="169dp"
         android:layout_height="130dp"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:tooltipText="Send an email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862"
-        app:srcCompat="@drawable/recomendado" tools:targetApi="o"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/recomendado"
+        tools:targetApi="o" />
 
     <ImageButton
         android:id="@+id/ibInstagram"
@@ -176,11 +182,11 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923" />
+        app:layout_constraintVertical_bias="0.929" />
 
     <TextView
         android:id="@+id/tvComer"
@@ -197,7 +203,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687" />
+        app:layout_constraintVertical_bias="0.646" />
 
     <TextView
         android:id="@+id/tvOcio"
@@ -214,7 +220,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintVertical_bias="0.929" />
 
     <TextView
         android:id="@+id/tvActividad"
@@ -227,11 +233,11 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372"/>
+        app:layout_constraintVertical_bias="0.338" />
 
     <TextView
         android:id="@+id/tvTransporte"
@@ -244,11 +250,11 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687"  />
+        app:layout_constraintVertical_bias="0.646" />
 
     <TextView
         android:id="@+id/tvLugar"
@@ -259,11 +265,11 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.007" />
 
     <TextView
         android:id="@+id/tvDormir"
@@ -276,11 +282,11 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37"/>
+        app:layout_constraintVertical_bias="0.336" />
 
     <ImageButton
         android:id="@+id/ibatras"

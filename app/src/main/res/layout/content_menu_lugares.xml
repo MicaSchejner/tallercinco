@@ -151,8 +151,8 @@
 
     <TextView
         android:id="@+id/tvDondeIr"
-        android:layout_width="173dp"
-        android:layout_height="33dp"
+        android:layout_width="134dp"
+        android:layout_height="28dp"
         android:fontFamily="sans-serif-thin"
         android:text="¿A Donde Viajar?"
         android:textSize="18sp"
@@ -278,10 +278,10 @@
 
     <Spinner
         android:id="@+id/spinnerCiudades"
-        android:layout_width="154dp"
+        android:layout_width="189dp"
         android:layout_height="34dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.735"
+        app:layout_constraintHorizontal_bias="0.689"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -304,11 +304,11 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="4dp"
-        android:backgroundTintMode="screen"
+        android:backgroundTint="#00FFFFFF"
         android:scaleType="fitXY"
         android:tooltipText="Ir"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"

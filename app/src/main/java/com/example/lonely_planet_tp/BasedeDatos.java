@@ -60,7 +60,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
         if (cursor.getCount() == 0) {
-            CargarCiudades();
+            CargarBD(db);
         }
         if (cursor.moveToFirst()) {
             do {
@@ -79,7 +79,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
         if (cursor.getCount() == 0) {
-            CargarCiudades();
+            CargarCiudades(db);
         }
         if (cursor.moveToFirst()) {
             do {
@@ -91,8 +91,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         cursor.close();
         return ejemploList;
     }
-    public void GuardarCiudad (int id, String descrip, double latitud, double longitud){
-        SQLiteDatabase database = this.getWritableDatabase();
+    public void GuardarCiudad (int id, String descrip, double latitud, double longitud,SQLiteDatabase database){
         ContentValues contenedor = new ContentValues();
         contenedor.put("id", id);
         contenedor.put("descripcion", descrip);
@@ -100,13 +99,13 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         contenedor.put("longitud", longitud);
         database.insertOrThrow("ciudades",null, contenedor);
     }
-    public void CargarCiudades(){
-        GuardarCiudad(1,"Rio De Janeiro",-22, -43);
-        GuardarCiudad(2,"Cuzco",-13,-71);
-        GuardarCiudad(3,"Pekin",39,116);
-        GuardarCiudad(4,"Roma",41,12);
-        GuardarCiudad(5,"Petra",30,35);
-        GuardarCiudad(6,"Agra",27,78);
+    public void CargarCiudades(SQLiteDatabase db){
+        GuardarCiudad(1,"Rio De Janeiro",-22, -43,db);
+        GuardarCiudad(2,"Cuzco",-13,-71,db);
+        GuardarCiudad(3,"Pekin",39,116,db);
+        GuardarCiudad(4,"Roma",41,12,db);
+        GuardarCiudad(5,"Petra",30,35,db);
+        GuardarCiudad(6,"Agra",27,78,db);
     }
 
     public List<String> getActividades(int id) {
@@ -116,7 +115,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         Cursor cursor;
         cursor = db.rawQuery(selectQuery, null);
         if (cursor.getCount() == 0) {
-            CargarActividades();
+            CargarActividades(db);
         }
         if (cursor.moveToFirst()) {
             do {
@@ -126,22 +125,22 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         cursor.close();
         return List;
     }
-    public void GuardarActividades (int id, String descrip){
+    public void GuardarActividades (SQLiteDatabase db, int id, String descrip){
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contenedor = new ContentValues();
         contenedor.put("id", id);
         contenedor.put("descripcion", descrip);
         database.insertOrThrow("ciudades_actividades",null, contenedor);
     }
-    public void CargarActividades(){
-        GuardarActividades(1,"Rio de Janeiro es sin lugar a dudas, una de las mejores ciudades de Sudamérica, para practicar todo tipo de deportes y actividades al aire libre. El clima tropical, la variedad de su geografía con los cerros asomándose sobre el mar, sus extensas playas y las decenas de kilómetros de paseos peatonales y ciclovías, invitan a aprovechar cada minuto para disfrutar de este paraíso urbano.Se puede recorrer la orla carioca en bicicleta para sentir la brisa del mar en la cara, o dar toda la vuelta a la Laguna Rodrigo de Freitas para observar las distintas perspectivas de los morros que la rodean. Allí mismo se puede probar a deslizarse sobre el agua practicando el esquí acuático ante la atenta mirada de las numerosas garzas.");
-        GuardarActividades(2,"Cusco es uno de los principales destinos del mundo, es una ciudad enclavada majestuosamente en medio de un gigantesco valle alimentado por dos ríos; con un diseño urbanístico único, pues fue diseñada por los incas con la forma de un puma. Muchos de los mejores tesoros arquitectónicos de la ciudad, se pueden encontrar caminando por el centro histórico del Cusco; a través de estrechas calles con muros incas de piedra, sobre los cuales están construidos templos y residencias de la época de la colonia; ocasionando una fusión arquitectónica única, entre las culturas de los conquistadores (españoles) y los conquistados (incas). La mayoría de estos lugares se encuentran muy cerca de la Plaza de Armas del Cusco (plaza principal de la ciudad). Usted podrá recorrer fácilmente la mayoría de barrios tradicionales de esta ciudad, en medio día, y podrá cubrir la mayor parte de la ciudad en 3 o 4 días; y definitivamente lo invitamos a disfrutar de las noches del Cusco");
-        GuardarActividades(3,"Pekín, la enorme capital de China, tiene una historia que se remonta a 3 milenios. Aun así, es conocida tanto por su arquitectura moderna como por sus sitios antiguos, como el complejo de la Ciudad Prohibida, el palacio imperial durante las dinastías Ming y Qing. Cerca, en la enorme plaza peatonal de Tiananmén, se encuentra el mausoleo de Mao Zedong y el Museo Nacional de China, que exhibe una amplia colección de reliquias culturales.\n" +
+    public void CargarActividades(SQLiteDatabase db){
+        GuardarActividades(db,1,"Rio de Janeiro es sin lugar a dudas, una de las mejores ciudades de Sudamérica, para practicar todo tipo de deportes y actividades al aire libre. El clima tropical, la variedad de su geografía con los cerros asomándose sobre el mar, sus extensas playas y las decenas de kilómetros de paseos peatonales y ciclovías, invitan a aprovechar cada minuto para disfrutar de este paraíso urbano.Se puede recorrer la orla carioca en bicicleta para sentir la brisa del mar en la cara, o dar toda la vuelta a la Laguna Rodrigo de Freitas para observar las distintas perspectivas de los morros que la rodean. Allí mismo se puede probar a deslizarse sobre el agua practicando el esquí acuático ante la atenta mirada de las numerosas garzas.");
+        GuardarActividades(db,2,"Cusco es uno de los principales destinos del mundo, es una ciudad enclavada majestuosamente en medio de un gigantesco valle alimentado por dos ríos; con un diseño urbanístico único, pues fue diseñada por los incas con la forma de un puma. Muchos de los mejores tesoros arquitectónicos de la ciudad, se pueden encontrar caminando por el centro histórico del Cusco; a través de estrechas calles con muros incas de piedra, sobre los cuales están construidos templos y residencias de la época de la colonia; ocasionando una fusión arquitectónica única, entre las culturas de los conquistadores (españoles) y los conquistados (incas). La mayoría de estos lugares se encuentran muy cerca de la Plaza de Armas del Cusco (plaza principal de la ciudad). Usted podrá recorrer fácilmente la mayoría de barrios tradicionales de esta ciudad, en medio día, y podrá cubrir la mayor parte de la ciudad en 3 o 4 días; y definitivamente lo invitamos a disfrutar de las noches del Cusco");
+        GuardarActividades(db,3,"Pekín, la enorme capital de China, tiene una historia que se remonta a 3 milenios. Aun así, es conocida tanto por su arquitectura moderna como por sus sitios antiguos, como el complejo de la Ciudad Prohibida, el palacio imperial durante las dinastías Ming y Qing. Cerca, en la enorme plaza peatonal de Tiananmén, se encuentra el mausoleo de Mao Zedong y el Museo Nacional de China, que exhibe una amplia colección de reliquias culturales.\n" +
                 "Otras atracciones importantes incluyen el Palacio de Verano, el retiro de los emperadores con pabellones y jardines a lo largo del lago Kunming. El Templo del Cielo es un parque donde se encuentra el colorido Salón de Oración por la Buena Cosecha, con forma circular. El Parque Olímpico de Pekín, construido para los juegos de 2008, abarca un extenso paseo costero y el Estadio Nacional de Pekín, apodado el \"Nido de aves\" por su rejilla tramada de acero. El distrito Back Lakes cuenta con estrechas calles antiguas (hutongs) bordeadas de tiendas de moda y cafés. El barrio 798 Art District alberga innovadoras galerías de arte. Un paseo adicional popular es una excursión a una sección cercana de la Gran Muralla China.");
-        GuardarActividades(4,"Roma, la capital de Italia, es una extensa ciudad cosmopolita que tiene a la vista casi 3,000 años de arte, arquitectura y cultura de influencia mundial. Las ruinas antiguas como las del Foro y el Coliseo evocan el poder del antiguo Imperio Romano. La ciudad del Vaticano, sede central de la Iglesia católica romana, cuenta con la Basílica de San Pedro y los Museos del Vaticano, que albergan obras maestras como los frescos de la Capilla Sixtina de Miguel Ángel.\n" +
+        GuardarActividades(db,4,"Roma, la capital de Italia, es una extensa ciudad cosmopolita que tiene a la vista casi 3,000 años de arte, arquitectura y cultura de influencia mundial. Las ruinas antiguas como las del Foro y el Coliseo evocan el poder del antiguo Imperio Romano. La ciudad del Vaticano, sede central de la Iglesia católica romana, cuenta con la Basílica de San Pedro y los Museos del Vaticano, que albergan obras maestras como los frescos de la Capilla Sixtina de Miguel Ángel.\n" +
                 "Las Escaleras de la Plaza de España del siglo XVIII se ubican en el centro del lujoso distrito comercial de Roma, con tiendas de moda de diseñador en Via Condotti y Via Borgognona. Los visitantes arrojan monedas a la icónica fuente de Trevi de estilo barroco. En el Panteón, que data del siglo II, se encuentra la tumba de Rafael de la época renacentista. La abundante cocina romana incluye platos tradicionales, como la carbonara, la amatriciana y el saltimbocca. Las actividades nocturnas incluyen ver una de las óperas clásicas de Verdi en el Teatro dell'Opera o recorrer los bares del barrio Testaccio de clase trabajadora, que fue el distrito de la industria carnicera en la ciudad.");
-        GuardarActividades(5,"Petra es una ciudad arqueológica famosa en el desierto, al sudoeste de Jordania. Fundada alrededor del 300 a. C., era la capital del Reino Nabateo. Se puede acceder a través de un estrecho cañón llamado Al Siq y contiene tumbas y templos tallados en acantilados de arenisca de color rosa, motivo por el que se la conoce como la \"Ciudad Rosa\". Su estructura más famosa probablemente sea el Al Khazneh de 45 metros de altura, un templo con una fachada y decoración al estilo griego, que se conoce como El Tesoro.");
-        GuardarActividades(6,"Agra es una ciudad del estado de Uttar Pradesh en el norte de India. En ella, se encuentra el icónico Taj Mahal, un mausoleo construido para la esposa del gobernante mogol Shah Jahan, Mumtaz Mahal (quien murió durante un parto en 1631). El imponente edificio principal incluye un gran domo y complejos tallados en marfil blanco con incrustaciones de piedras preciosas. Se encuentra detrás de un estanque reflectante dentro de un patio demarcado por 4 minaretes.\n" +
+        GuardarActividades(db,5,"Petra es una ciudad arqueológica famosa en el desierto, al sudoeste de Jordania. Fundada alrededor del 300 a. C., era la capital del Reino Nabateo. Se puede acceder a través de un estrecho cañón llamado Al Siq y contiene tumbas y templos tallados en acantilados de arenisca de color rosa, motivo por el que se la conoce como la \"Ciudad Rosa\". Su estructura más famosa probablemente sea el Al Khazneh de 45 metros de altura, un templo con una fachada y decoración al estilo griego, que se conoce como El Tesoro.");
+        GuardarActividades(db,6,"Agra es una ciudad del estado de Uttar Pradesh en el norte de India. En ella, se encuentra el icónico Taj Mahal, un mausoleo construido para la esposa del gobernante mogol Shah Jahan, Mumtaz Mahal (quien murió durante un parto en 1631). El imponente edificio principal incluye un gran domo y complejos tallados en marfil blanco con incrustaciones de piedras preciosas. Se encuentra detrás de un estanque reflectante dentro de un patio demarcado por 4 minaretes.\n" +
                 "Cerca del Taj Mahal están las murallas de ladrillo rojo de 20 m de altura del Fuerte de Agra, un gran palacio y una fortaleza mogola, que data en gran parte de los siglos XVI y XVII. Al otro lado del río Yamuna, se encuentra otra tumba sorprendente, Itimad-Ud-Daulah, que antecede al Taj Mahal por un par de años, por lo que se suele llamar \"Pequeño Taj\". Al oeste de la ciudad, se encuentra la notablemente bien conservada \"ciudad fantasma\" de Fatehpur Sikri, cuyos pabellones, barrios harén y apartamentos reales de arenisca roja datan de finales del siglo XVI, cuando fue brevemente la capital del Imperio mogol.");
     }
 
@@ -261,7 +260,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         GuardarTransporte(3,"El crecimiento de la ciudad a partir de las reformas económicas ha convertido a Pekín en un importante nudo de transportes. La ciudad está rodeada de cinco anillos de circunvalación, nueve autopistas, once carreteras principales, diversas líneas de ferrocarril y un aeropuerto internacional.");
         GuardarTransporte(4,"El casco histórico tiene tráfico limitado y sólo se accede con permisos especiales. Es algo a tener en cuenta para quienes quieren alquilar auto.\n" +
                 "Lo bueno de Roma es que se puede hacer todo caminando. Si bien tienen dos líneas de metro (A y B, azul y roja), no es indispensable usarlo. Para quienes quieren recorrer por encima de la tierra para poder ir viendo absolutamente todo, hay un bus turístico por 20 euros por persona.Hay que tener en cuenta que todo cierra temprano, Sobre todo en temporada baja.");
-        GuardarTransporte(5,"Jordania está atravesada de norte a sur por dos carreteras, la Desert´s Highway y la King´s Highway. La Desert´s Higway es la más rápida para moverse de norte a sur, entre Ammán y Aqaba. La King´s Highway es más lenta pero mucho interesante, atravesando valles y montañas siguiendo las antiguas rutas de los cruzados y las peregrinaciones cristianas y musulmanas. A lo largo de ella hay multitud de pueblos, castillos y lugares de interés. Lo ideal es hacer la King´s a la ida y volver por la Desert´s Highway, sobre todo si queréis bucear en el mar Rojo. La King´s Higway pasa por puntos de gran altura y si habéis buceado podríais tener problemas de descompresión, al igual que cuando se coge un avión.\n" +
+        GuardarTransporte(5,"Jordania está atravesada de norte a sur por dos carreteras, la Desert´s Highway y la King´s Highway. La Desert´s Higway es la más rápida para moverse de norte a sur, entre Ammán y Aqaba. La King´s Highway es más lenta pero mucho interesante, atravesando valles y montañas siguiendo las antiguas rutas de los cruzados y las peregrinaciones cristianas y musulmanas. A lo largo de ella hay multitud de pueblos, castillos y lugares de interés. Lo ideal es hacer la King´s a la ida y volver por la Desert´s Highway, sobre todo si queréis bucear en el mar Rojo.\n" +
                 "\n" +
                 "Los transportes públicos locales son malos, impuntuales y calurosos. Conviene negociar transporte privado, no es caro (sobre todo si viajáis más de 2 personas) y mucho más confortable.");
         GuardarTransporte(6,"Agra no dispone de transporte público. Con todo, en los últimos años se ha implementado un servicio de autobuses que lleva a los principales lugares de la ciudad. El precio de este autobús turístico es de 500 ₹ por persona para realizar un recorrido completo por lugares como el Taj Mahal o el Fuerte de Agra.\n" +
@@ -334,7 +333,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         database.insertOrThrow("ciudades_ocio",null, contenedor);
     }
     public void CargarOcio(){
-        GuardarOcio(1,"Muchas son las playas de Río de Janeiro y las hay para todos los gustos. Las más famosas son sin duda la playa de Ipanema y la de Copacabana, cuyo paseo marítimo con su ondulante forma en blanco y negro, es reconocida mundialmente. En estas playas es donde se reúne más gente en una mezcla fantástica de color, luz, música y alegría.Pero además de estas dos playas, hay otras que se ajustan a todos los gustos. Si lo que se busca es una playa pequeña, tranquila y de fácil acceso, la playa Vermelha a los pies del Pan de Azúcar, es la indicada. La playa de Leme es perfecta para practicar bodysurf, o para ver a otros practicándolo desde su paseo de los pescadores.Por su parte, las olas del mar en Arpoador son buenas para el surf, aunque si por algo es famosa esta playa es por ser la cita obligada todos los días al caer la tarde. Desde lo alto de la enorme piedra de Arpoador (hay que ir con tiempo para coger buen lugar) se tienen vistas fantásticas de la puesta del sol, que en verano se oculta tras el morro Dois Irmaos creando una combinación de luces y sombras preciosa.");
+        GuardarOcio(1,"Muchas son las playas de Río de Janeiro y las hay para todos los gustos. Las más famosas son sin duda la playa de Ipanema y la de Copacabana, cuyo paseo marítimo con su ondulante forma en blanco y negro, es reconocida mundialmente. En estas playas es donde se reúne más gente en una mezcla fantástica de color, luz, música y alegría.Pero además de estas dos playas, hay otras que se ajustan a todos los gustos. Si lo que se busca es una playa pequeña, tranquila y de fácil acceso, la playa Vermelha a los pies del Pan de Azúcar, es la indicada. La playa de Leme es perfecta para practicar bodysurf, o para ver a otros practicándolo desde su paseo de los pescadores.Por su parte, las olas del mar en Arpoador son buenas para el surf, aunque si por algo es famosa esta playa es por ser la cita obligada todos los días al caer la tarde. Desde lo alto de la enorme piedra de Arpoador (hay que ir con tiempo para obtener un buen lugar) se tienen vistas fantásticas de la puesta del sol, que en verano se oculta tras el morro Dois Irmaos creando una combinación de luces y sombras preciosa.");
         GuardarOcio(2,"En Cusco se puede encontrar clubes de baile para todos los gustos; se puede escuchar muchos tipos diferentes de música; electrónica, salsa, dance, hip hop, reggaeton, reggae y mucho más; la mayoría de estos locales tiene generosas happy hours.\n" +
                 "Si tiene su visita Machu Picchu al día siguiente o si acaba de terminar el Camino Inca, lo más probable es que desee un lugar donde relajarse en vez de una discoteca. Una de las mejores alternativas son los hermosos bares del Cusco, con obras de arte en las paredes y hermosas decoraciones con motivos andinos. Pero si lo que quiere es un lugar con ambiente festivo, pues lo encontrará. En muchos bares encontrara juegos de mesa, naipes, mesas de billar, pequeñas bibliotecas y una de las mejores atmosferas en el ombligo del mundo. Estos son algunos muy buenos bares en Cusco.\n");
         GuardarOcio(3,"La noche de Pekín ofrece entretenimiento para todos los gustos. No solo podrás ir de fiesta y probar deliciosos tragos orientales, sino que también tendrás la opción de visitar la ópera, ver un espectáculo de artes marciales o incluso uno de acrobacias. \n" +
@@ -346,5 +345,15 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         GuardarOcio(5,"uno de los paseos más populares es Petra nocturna (Petra by night). Este romántico paseo parte al anochecer y recorre el Siq, que destaca con una iluminación a velas que resalta los tonos rosa de la roca. En la Tesorería, también iluminada con velas, se realiza un espectáculo musical con danzas de beduinos. En la actualidad, esta actividad se realiza los lunes, miércoles y jueves de cada semana");
         GuardarOcio(6,"Se puede decir que Agra es más famosa por su actividad turística que por su vida nocturna. Es cierto que esta pequeña ciudad ofrece pocas posibilidades en términos de bares.\n" +
                 "Club rush Es el lugar imprescindible para las salidas en Agra. Situado en el distrito de Tajganj, es un club de renombre en la ciudad dividido en dos secciones: una parte para grupos pequeños y una sala para ocasiones especiales. Dentro del Hotel Oberoi Amarvilas, es el lugar de moda para tomar una copa mientras se escucha al DJ mezclado con los últimos sonidos del momento. Estará inmerso en un ambiente acogedor: sofás de seda, taburetes de bar a la antigua usanza\n");
+    }
+    public void CargarBD(SQLiteDatabase db)
+    {
+        this.CargarDormir();
+        this.CargarRecomendados();
+        this.CargarComer();
+        this.CargarTransporte();
+        this.CargarOcio();
+        this.CargarActividades(db);
+        this.CargarCiudades(db);
     }
 }
