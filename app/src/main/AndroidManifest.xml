@@ -61,10 +61,6 @@
             android:label="@string/title_main_actividad"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".PasesActivity"
             android:label="@string/title_activity_pases"
             android:theme="@style/AppTheme.NoActionBar" />
