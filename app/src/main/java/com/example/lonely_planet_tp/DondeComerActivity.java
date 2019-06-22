@@ -79,9 +79,9 @@ public class DondeComerActivity extends FragmentActivity implements OnMapReadyCa
 
         }else{
 //            LatLng rio = new LatLng(-22, -43);
-            LatLng rio = new LatLng(la, lo);
-            mMap.addMarker(new MarkerOptions().position(rio).title("Marker in mica"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(rio));
+            LatLng ciudad = new LatLng(la, lo);
+            mMap.addMarker(new MarkerOptions().position(ciudad).title("Marker in mica"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(ciudad));
         }
 
     }

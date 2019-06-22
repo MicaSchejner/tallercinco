@@ -69,8 +69,8 @@ public class MainActivity_comida extends AppCompatActivity {
             }
         });
 
-        final double lng = ciudades.get(0).getLng();
-        final double lat = ciudades.get(0).getLat();
+        final double lng = 151;
+        final double lat = -34;
 
         ImageButton ib_map = findViewById(R.id.ibmap);
         ib_map.setOnClickListener(new View.OnClickListener() {
