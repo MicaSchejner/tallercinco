@@ -36,18 +36,17 @@
 
     <TextView
         android:id="@+id/tv_descripcion"
-        android:layout_width="398dp"
-        android:layout_height="237dp"
+        android:layout_width="392dp"
+        android:layout_height="230dp"
         android:fontFamily="sans-serif-thin"
         android:scrollbars="vertical"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.847" />
+        app:layout_constraintVertical_bias="0.82" />
 
     <TextView
         android:id="@+id/tv_lugar"
@@ -68,33 +67,35 @@
         android:id="@+id/ibatras"
         android:layout_width="48dp"
         android:layout_height="38dp"
-        android:backgroundTintMode="screen"
+        android:backgroundTint="#00FFFFFF"
+        android:hapticFeedbackEnabled="false"
         android:scaleType="fitCenter"
         android:scaleX="2"
         android:scaleY="2"
         android:tooltipText="Ir"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.996"
+        app:layout_constraintVertical_bias="0.974"
         app:srcCompat="@drawable/botonizq"  />
 
     <ImageButton
         android:id="@+id/ibmap"
         android:layout_width="54dp"
         android:layout_height="43dp"
-        android:backgroundTintMode="screen"
+        android:backgroundTint="#00FFFFFF"
+        android:hapticFeedbackEnabled="false"
         android:scaleType="fitCenter"
         android:scaleX="2"
         android:scaleY="2"
         android:tooltipText="Ir"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/googlemap" />
+        app:layout_constraintVertical_bias="0.974"
+        app:srcCompat="@drawable/googlemap"  />
 </android.support.constraint.ConstraintLayout>
