@@ -60,7 +60,7 @@ public class MainActivity_menu_informacion extends AppCompatActivity {
         });
 
         ImageButton bcomer = findViewById(R.id.ibComer);
-        bcomer.setOnClickListener(new View.OnClickListener() {
+        bcomer.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity_comida.class);
@@ -111,9 +111,13 @@ public class MainActivity_menu_informacion extends AppCompatActivity {
         binstagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.instagram.com/despegar/?hl=es-la");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("instagram://www.instagram.com/despegar/?hl=es-la")));
+                } catch (Exception e) {
+                    Intent i = new Intent(android.content.Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.instagram.android"));
+                    startActivity(i);
+                }
             }
         });
 
@@ -121,9 +125,14 @@ public class MainActivity_menu_informacion extends AppCompatActivity {
         btwitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://twitter.com/despegar?lang=es");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?screen_name=despegar")));
+                } catch (Exception e) {
+                    Intent i = new Intent(android.content.Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.twitter.android"));
+                    startActivity(i);
+                }
+
             }
         });
 
@@ -131,9 +140,14 @@ public class MainActivity_menu_informacion extends AppCompatActivity {
         bpinterest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://ar.pinterest.com/despegarcom/");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("pinterest://www.pinterest.com/despegarcom")));
+                } catch (Exception e) {
+                    Intent i = new Intent(android.content.Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.pinterest"));
+                    startActivity(i);
+                }
             }
         });
 
@@ -141,9 +155,14 @@ public class MainActivity_menu_informacion extends AppCompatActivity {
         bface.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.facebook.com/DespegarArgentina/?brand_redir=95188452883");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                try {
+                    String facebookId = "fb://page/108270726024539";
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(facebookId )));
+                } catch (Exception e) {
+                    Intent i = new Intent(android.content.Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.facebook.katana&hl=es_AR"));
+                    startActivity(i);
+                }
             }
         });
 
