@@ -5,7 +5,9 @@ import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -59,12 +61,8 @@ public class DondeComerActivity extends FragmentActivity implements OnMapReadyCa
         double la = this.getLat();
         //mMap.setPadding(10,10,10,10);
 
-        // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(-34, 151);
-//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -73,15 +71,27 @@ public class DondeComerActivity extends FragmentActivity implements OnMapReadyCa
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
             mMap.setMyLocationEnabled(true);
-//            LatLng sydney = new LatLng(-34, 151);
-//            mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        }
 
-        }else{
-//            LatLng rio = new LatLng(-22, -43);
-            LatLng ciudad = new LatLng(la, lo);
-            mMap.addMarker(new MarkerOptions().position(ciudad).title("Marker in mica"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(ciudad));
+
+        LatLng ciudad = new LatLng(la, lo);
+
+        mMap.addMarker(new MarkerOptions().position(ciudad).title("Marker in mica"));
+        CameraUpdate center = CameraUpdateFactory.newLatLng(ciudad);
+        CameraUpdate zoom = CameraUpdateFactory.zoomTo(12);
+        // mMap.moveCamera(CameraUpdateFactory.newLatLng(ciudad));
+        mMap.moveCamera(center);
+        mMap.animateCamera(zoom);
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setMapToolbarEnabled(true);
+        mMap.getUiSettings().setZoomGesturesEnabled(true);
+
+
+        // check if map is created successfully or not
+        if (mMap == null) {
+            Toast.makeText(getApplicationContext(),
+                    "Perdon! No podemos mostrar el mapa en este momento", Toast.LENGTH_SHORT)
+                    .show();
         }
 
     }

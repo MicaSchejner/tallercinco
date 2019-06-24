@@ -100,7 +100,7 @@ public class BasedeDatos  extends SQLiteOpenHelper {
         database.insertOrThrow("ciudades",null, contenedor);
     }
     public void CargarCiudades(SQLiteDatabase db){
-        GuardarCiudad(1,"Rio De Janeiro",-22, -43,db);
+        GuardarCiudad(1,"Rio De Janeiro",-22.90, -43.20,db);
         GuardarCiudad(2,"Cuzco",-13,-71,db);
         GuardarCiudad(3,"Pekin",39,116,db);
         GuardarCiudad(4,"Roma",41,12,db);
