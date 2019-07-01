@@ -2,11 +2,25 @@ package com.example.lonely_planet_tp;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -14,10 +28,41 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.AutocompletePrediction;
+import com.google.android.libraries.places.api.model.AutocompleteSessionToken;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.model.TypeFilter;
+import com.google.android.libraries.places.api.net.FetchPlaceRequest;
+import com.google.android.libraries.places.api.net.FetchPlaceResponse;
+import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest;
+import com.google.android.libraries.places.api.net.FindAutocompletePredictionsResponse;
+import com.google.android.libraries.places.api.net.PlacesClient;
+import com.mancj.materialsearchbar.MaterialSearchBar;
+import com.mancj.materialsearchbar.adapter.SuggestionsAdapter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DondeComerActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private FusedLocationProviderClient mFusedLocationProviderClient;
+    private PlacesClient placesClient;
+    private List<AutocompletePrediction> predictionList;
+    private Location mLastKnownLocation;
+    private LocationCallback locationCallback;
+    private MaterialSearchBar materialSearchBar;
+    private View mapView;
+    private Button btnFind;
+
+    private final float DEFAULT_ZOOM = 15;
+
     private double lon;
     private double lat;
 
@@ -30,6 +75,8 @@ public class DondeComerActivity extends FragmentActivity implements OnMapReadyCa
             setLat(parametros.getDouble("lat"));
         }
 
+        materialSearchBar = findViewById(R.id.searchBar);
+        btnFind = findViewById(R.id.btn_find);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donde_comer);
@@ -37,6 +84,12 @@ public class DondeComerActivity extends FragmentActivity implements OnMapReadyCa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        mapView = mapFragment.getView();
+
+        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        Places.initialize(this, getString(R.string.google_maps_key));
+        placesClient = Places.createClient(this);
+        final AutocompleteSessionToken token = AutocompleteSessionToken.newInstance();
 
 
     }
@@ -62,18 +115,6 @@ public class DondeComerActivity extends FragmentActivity implements OnMapReadyCa
         //mMap.setPadding(10,10,10,10);
 
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            mMap.setMyLocationEnabled(true);
-        }
-
-
         LatLng ciudad = new LatLng(la, lo);
 
         mMap.addMarker(new MarkerOptions().position(ciudad).title("Marker in mica"));
@@ -82,9 +123,11 @@ public class DondeComerActivity extends FragmentActivity implements OnMapReadyCa
         // mMap.moveCamera(CameraUpdateFactory.newLatLng(ciudad));
         mMap.moveCamera(center);
         mMap.animateCamera(zoom);
+        mMap.setMyLocationEnabled(true);
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setMapToolbarEnabled(true);
-        mMap.getUiSettings().setZoomGesturesEnabled(true);
+        mMap.getUiSettings().setCompassEnabled(true);
 
 
         // check if map is created successfully or not
